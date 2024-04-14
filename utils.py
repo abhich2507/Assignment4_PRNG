@@ -5,6 +5,18 @@ from plotly import graph_objects as go
 from scipy.optimize import newton
 
 
+
+
+
+def prng(s, a, m, it):
+    x = s
+    random_numbers = []
+    for _ in range(it):
+        x = (a * x) % m
+        random_numbers.append(x / m)  # Normalize to [0, 1]
+    return random_numbers
+
+
 # Q1 - MC Integration
 
 seed = 65539
